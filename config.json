@@ -1,0 +1,38 @@
+{
+  "download": {
+    "max_workers": 8,
+    "timeout": 30,
+    "chunk_size": 8192,
+    "retry_times": 3
+  },
+  "output": {
+    "base_dir": "./downloads",
+    "create_subfolder": false,
+    "overwrite_existing": false
+  },
+  "network": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "verify_ssl": false,
+    "headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Connection": "keep-alive",
+      "Upgrade-Insecure-Requests": "1"
+    }
+  },
+  "browser": {
+    "headless": true,
+            "slow_mo": 1000
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "crawling": {
+    "wait_for_page_load": true,
+    "page_load_timeout": 30000,
+    "max_retries": 3,
+    "retry_delay": 2
+  }
+}
