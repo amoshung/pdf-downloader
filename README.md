@@ -1,14 +1,14 @@
-# 🕷️ LawPDFFetcher - 智能PDF爬蟲系統
+# 🕷️ PDF Downloader - 智能PDF爬蟲系統
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)](https://github.com/yourusername/lawpdffetcher)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)](https://github.com/amoshung/pdf-downloader)
 
 > **一個基於 Playwright 的智能 PDF 爬蟲系統，專為法律法規文檔下載而設計，具備智能過濾、PDF合併、動態配置等強大功能。**
 
 ## 🎯 專案概述
 
-**LawPDFFetcher** 是一個專為法律法規文檔下載而設計的智能PDF爬蟲系統。系統採用現代Python技術棧，結合Playwright瀏覽器自動化技術，能夠智能識別網頁中的PDF連結，支援多種過濾策略，並提供PDF合併功能，為法律從業者、研究人員和學生提供高效的文檔獲取工具。
+**PDF Downloader** 是一個專為法律法規文檔下載而設計的智能PDF爬蟲系統。系統採用現代Python技術棧，結合Playwright瀏覽器自動化技術，能夠智能識別網頁中的PDF連結，支援多種過濾策略，並提供PDF合併功能，為法律從業者、研究人員和學生提供高效的文檔獲取工具。
 
 ### 🌟 核心特色
 
@@ -158,8 +158,8 @@
 
 #### 1. 克隆專案
 ```bash
-git clone https://github.com/yourusername/lawpdffetcher.git
-cd lawpdffetcher
+git clone https://github.com/amoshung/pdf-downloader.git
+cd pdf-downloader
 ```
 
 #### 2. 建立虛擬環境
@@ -196,7 +196,7 @@ playwright install
 ### 方法二：使用 pip 安裝
 
 ```bash
-pip install lawpdffetcher
+pip install pdf-downloader
 ```
 
 ### 方法三：Docker 安裝
@@ -225,14 +225,14 @@ python main.py
 #### 2. 選擇功能
 程式會顯示主選單：
 ```
-🕷️ LawPDFFetcher - 智能PDF爬蟲系統
+🎯 請選擇要執行的功能
 =====================================
-1. 抓取網頁PDF檔案
-2. 合併PDF檔案
-3. 動態配置管理
-4. 退出程式
+1. 🌐 抓取網頁PDF
+2. 📄 指定資料夾PDF合成單一檔案
+3. ⚙️  動態配置管理
+4. ❌ 退出程式
 
-請選擇功能 (1-4): 
+請選擇功能 (1/2/3/4): 
 ```
 
 #### 3. 抓取PDF檔案
@@ -373,7 +373,7 @@ python test_new_features.py
 ## 📁 專案結構
 
 ```
-lawpdffetcher/
+pdf-downloader/
 ├── 📁 src/                    # 核心模組
 │   ├── 📄 __init__.py
 │   ├── 📄 file_manager.py     # 檔案管理
@@ -383,14 +383,6 @@ lawpdffetcher/
 │   ├── 📄 pdf_merger.py       # PDF合併
 │   └── 📄 dynamic_config.py   # 動態配置
 ├── 📁 tests/                  # 測試套件
-│   ├── 📄 __init__.py
-│   ├── 📄 conftest.py
-│   ├── 📄 run_tests.py
-│   ├── 📄 test_file_manager.py
-│   ├── 📄 test_integration.py
-│   ├── 📄 test_pdf_crawler.py
-│   ├── 📄 test_playwright_browser.py
-│   └── 📄 test_url_handler.py
 ├── 📁 memory-bank/            # 專案知識庫
 │   ├── 📄 projectbrief.md     # 專案概述
 │   ├── 📄 productContext.md   # 產品上下文
@@ -399,6 +391,10 @@ lawpdffetcher/
 │   ├── 📄 activeContext.md    # 當前狀態
 │   └── 📄 progress.md         # 進度追蹤
 ├── 📁 downloads/              # 下載檔案目錄
+├── 📁 config_backups/         # 配置備份目錄
+├── 📁 test_downloads/         # 測試下載目錄
+├── 📁 test_merge/             # 測試合併目錄
+├── 📁 venv/                   # 虛擬環境
 ├── 📄 main.py                 # 主程式入口
 ├── 📄 requirements.txt        # 依賴套件
 ├── 📄 config.json            # 配置檔案
@@ -427,10 +423,10 @@ export HTTP_PROXY=http://proxy.example.com:8080
 export HTTPS_PROXY=http://proxy.example.com:8080
 
 # 設定下載目錄
-export LAWPDF_DOWNLOAD_DIR=/path/to/downloads
+export PDF_DOWNLOADER_DOWNLOAD_DIR=/path/to/downloads
 
 # 設定日誌等級
-export LAWPDF_LOG_LEVEL=INFO
+export PDF_DOWNLOADER_LOG_LEVEL=INFO
 ```
 
 ## 🚨 故障排除
@@ -479,7 +475,7 @@ tail -f crawler.log
 ```bash
 # 1. Fork 專案
 # 2. 克隆你的 Fork
-git clone https://github.com/yourusername/lawpdffetcher.git
+git clone https://github.com/yourusername/pdf-downloader.git
 
 # 3. 建立功能分支
 git checkout -b feature/amazing-feature
@@ -513,30 +509,10 @@ git push origin feature/amazing-feature
 
 ## 📞 聯絡資訊
 
-- **專案維護者**: [Your Name](mailto:your.email@example.com)
-- **專案網址**: https://github.com/yourusername/lawpdffetcher
-- **問題回報**: https://github.com/yourusername/lawpdffetcher/issues
-- **功能建議**: https://github.com/yourusername/lawpdffetcher/discussions
-
-## 🔮 未來規劃
-
-### 短期目標 (1-3個月)
-- [ ] 支援更多網站的特殊解析邏輯
-- [ ] 添加代理伺服器支援
-- [ ] 實現GUI圖形化界面
-- [ ] 支援更多PDF處理功能
-
-### 中期目標 (3-6個月)
-- [ ] 雲端部署支援
-- [ ] API接口開發
-- [ ] 插件系統架構
-- [ ] 多語言國際化
-
-### 長期目標 (6-12個月)
-- [ ] 機器學習智能過濾
-- [ ] 分散式爬取架構
-- [ ] 企業級功能整合
-- [ ] 社群生態系統建設
+- **專案維護者**: [amoshung](https://github.com/amoshung)
+- **專案網址**: https://github.com/amoshung/pdf-downloader
+- **問題回報**: https://github.com/amoshung/pdf-downloader/issues
+- **功能建議**: https://github.com/amoshung/pdf-downloader/discussions
 
 ---
 
@@ -544,8 +520,8 @@ git push origin feature/amazing-feature
 
 **⭐ 如果這個專案對你有幫助，請給我們一個星標！⭐**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/lawpdffetcher?style=social)](https://github.com/yourusername/lawpdffetcher)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/lawpdffetcher?style=social)](https://github.com/yourusername/lawpdffetcher)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/lawpdffetcher)](https://github.com/yourusername/lawpdffetcher/issues)
+[![GitHub stars](https://img.shields.io/github/stars/amoshung/pdf-downloader?style=social)](https://github.com/amoshung/pdf-downloader)
+[![GitHub forks](https://img.shields.io/github/forks/amoshung/pdf-downloader?style=social)](https://github.com/amoshung/pdf-downloader)
+[![GitHub issues](https://img.shields.io/github/issues/amoshung/pdf-downloader)](https://github.com/amoshung/pdf-downloader/issues)
 
 </div>
